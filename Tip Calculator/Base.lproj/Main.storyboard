@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-mu-feu">
+                                <rect key="frame" x="235" y="141" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="inputBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="XFs-Kn-2EE"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="ErH-Mf-1le"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjR-dV-ZTc">
+                                <rect key="frame" x="220" y="70" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDI-sy-AVK">
+                                <rect key="frame" x="237" y="193" width="126" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="DOP-na-CXX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dkT-re-Cf0">
+                                <rect key="frame" x="195" y="244" width="211" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="xP9-Zd-9UT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2QS-5M-EXI"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzV-k9-tBT">
+                                <rect key="frame" x="245" y="319" width="109" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="vNB-iI-T8w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mjR-dV-ZTc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IaH-sQ-Whe"/>
+                            <constraint firstItem="kDI-sy-AVK" firstAttribute="top" secondItem="v1N-mu-feu" secondAttribute="bottom" constant="22" id="OUj-Vh-kjC"/>
+                            <constraint firstItem="dkT-re-Cf0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aA2-hJ-d5Y"/>
+                            <constraint firstItem="v1N-mu-feu" firstAttribute="top" secondItem="mjR-dV-ZTc" secondAttribute="bottom" constant="50" id="bVv-bW-Acq"/>
+                            <constraint firstItem="mjR-dV-ZTc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="gwM-dk-Xua"/>
+                            <constraint firstItem="dkT-re-Cf0" firstAttribute="top" secondItem="kDI-sy-AVK" secondAttribute="bottom" constant="30" id="ilL-FD-xec"/>
+                            <constraint firstItem="MzV-k9-tBT" firstAttribute="top" secondItem="dkT-re-Cf0" secondAttribute="bottom" constant="45" id="lMx-IT-dZc"/>
+                            <constraint firstItem="MzV-k9-tBT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uNq-8o-O8x"/>
+                            <constraint firstItem="v1N-mu-feu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v84-AN-tCq"/>
+                            <constraint firstItem="kDI-sy-AVK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yVL-Lx-G9N"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mKz-aX-8Sf" appends="YES" id="mfl-8W-OHo"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="billAmountField" destination="v1N-mu-feu" id="0XC-zp-sRk"/>
+                        <outlet property="tapGesture" destination="mKz-aX-8Sf" id="hY5-vl-EeG"/>
+                        <outlet property="tipAmount" destination="MzV-k9-tBT" id="tsn-qI-Ktq"/>
+                        <outlet property="tipPercentageLabel" destination="kDI-sy-AVK" id="GKa-td-n9k"/>
+                        <outlet property="tipSlider" destination="dkT-re-Cf0" id="4Dx-xe-Pds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mKz-aX-8Sf">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="1f7-0t-Un5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="305" y="360"/>
+        </scene>
+    </scenes>
+</document>
